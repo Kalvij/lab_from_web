@@ -58,3 +58,12 @@ a:active {
     color: rgb(0, 221, 236);
     opacity: 0.3;
 }
+
+div.menu {
+    border: 5px solid;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    color: rgba(89, 0, 190, 0.329);
+    background: url(4.avif)
+}
