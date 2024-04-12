@@ -31,6 +31,13 @@ main {
     font-weight: bold;
     font-size: 15pt;
 }
+
+a {
+    color: rgb(79, 95, 79);
+    text-decoration: none;
+    transition: 2s 1s;
+}
+
 a:link {
     color: rgb(131, 129, 2);
     text-decoration: none;
@@ -42,8 +49,9 @@ a:visited {
 }
 
 a:hover {
-    color:rgb(103, 12, 163); 
+    color:rgb(58, 0, 97); 
     text-decoration: underline;
+    font-weight: bold;
 }
 
 a:active {
