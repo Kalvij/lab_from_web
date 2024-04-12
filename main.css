@@ -31,3 +31,22 @@ main {
     font-weight: bold;
     font-size: 15pt;
 }
+a:link {
+    color: rgb(131, 129, 2);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(79, 95, 79);
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgb(103, 12, 163); 
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(0, 221, 236);
+    opacity: 0.3;
+}
