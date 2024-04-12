@@ -1,33 +1,36 @@
 body {
-    background-color: rgb(255, 255, 255);
+    background: rgba(101, 255, 242, 0.849);
     color: black;
     font-family: Arial;
     margin: 0px;
 }
 
 header {
-    background-color: rgb(245, 157, 223);
-    color: rgb(0, 0, 0);
+    background-color: black;
+    color: lightgreen;
     font-family: Arial;
     margin: 0px;
-    font-weight: bold;
+    
     font-size: 15pt;
 }
 
 footer {
-    background-color: rgb(245, 157, 223);
-    color: rgb(0, 0, 0);
+    background-color: black;
+    color: lightgreen;
     font-family: Arial;
     margin: 0px;
-    font-weight: bold;
+    bottom: 0;
     font-size: 15pt;
-}
+    position: fixed;
+    right: 0;
+    left: 0;
+}   
 
 main {
-    background-color: rgb(255, 255, 255);
+
     color:rgba(106, 8, 109, 0.89);
     font-family: Arial;
-    margin: 10px;
+    margin: 10px 20px 45px;
     font-weight: bold;
     font-size: 15pt;
 }
