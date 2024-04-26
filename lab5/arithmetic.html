@@ -20,6 +20,11 @@
                 alert(author);
     
             }
+            function showMes() {
+                let mes = 'Хайп на моей странице!';
+                alert(mes);
+    
+            }
         </script>
         <style>
             .message {
@@ -39,7 +44,7 @@
         </style>
     </head>
     <body>
-        <header>
+        <header onclick="showAuthor()">
             НГТУ ФБ, Лабораторная 5
         </header>
 
@@ -49,7 +54,7 @@
         </main>
 
 
-        <footer>
+        <footer ondblclick="showMes()">
             <hr>
             &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
         </footer>
