@@ -10,11 +10,15 @@
         <link rel="icon" href="../favicon-32x32.png">
     </head>
     <script>
-        function blurChange() {
-            let value = document.getElementById('blurValue').value + 'px';
-            document.getElementById('blurOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'blur(' + value + ')';
+        function Filter() {
+            let blurValue = document.getElementById('blurValue').value + 'px';
+            let brightnessValue = document.getElementById('brightnessValue').value + '%';
+
+            document.getElementById('blurOutput').innerText = blurValue;
+            document.getElementById('brightnessOutput').innerText = brightnessValue;
+            document.getElementById('Image').style.filter = 'blur(' + blurValue + ') brightness(' + brightnessValue + ')';
         }
+
     </script>
     <style>
         .img {
@@ -32,10 +36,13 @@
         <main>
             <div>
                 Фильтр blur:
-                <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
+                <input type="range" min="0" max="20" value="0" onchange="Filter()" id="blurValue">
                 <span id="blurOutput"></span>
+                Фильтр brightness:
+                <input type="range" min="0" max="500" value="100" onchange="Filter()" id="brightnessValue">
+                <span id="brightnessOutput"></span>
             </div>
-            <div><img  src="pr.jpeg" id='blurImage' class="img"></div>
+            <div><img  src="pr.jpeg" id='Image' class="img"></div>
         </main>
 
         <footer>
