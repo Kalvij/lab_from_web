@@ -16,10 +16,11 @@
             let contrastValue = document.getElementById('contrastValue').value + '%';
             let grayscaleValue = document.getElementById('grayscaleValue').value + '%';
             let huerotateValue = document.getElementById('huerotateValue').value + 'deg';
+            let invertValue = document.getElementById('invertValue').value + '%';
 
             document.getElementById('blurOutput').innerText = blurValue;
             document.getElementById('brightnessOutput').innerText = brightnessValue;
-            document.getElementById('Image').style.filter = 'blur(' + blurValue + ') brightness(' + brightnessValue + ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ') hue-rotate(' + huerotateValue + ')';
+            document.getElementById('Image').style.filter = 'blur(' + blurValue + ') brightness(' + brightnessValue + ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ') hue-rotate(' + huerotateValue + ') invert(' + invertValue + ')';
         }
 
     </script>
@@ -53,10 +54,13 @@
                 Фильтр hue-rotate:
                 <input type="range" min="0" max="360" value="0" onchange="Filter()" id="huerotateValue">
                 <span id="contrastOutput"></span><br>
+                Фильтр invert:
+                <input type="range" min="0" max="100" value="0" onchange="Filter()" id="invertValue">
+                <span id="contrastOutput"></span><br>
             </div>
             <div><img src="pr.jpeg" id='Image' class="img"></div>
         </main>
-        hue-rotate()
+        
         <footer>
             <hr>
             &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
