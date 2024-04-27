@@ -15,10 +15,11 @@
             let brightnessValue = document.getElementById('brightnessValue').value + '%';
             let contrastValue = document.getElementById('contrastValue').value + '%';
             let grayscaleValue = document.getElementById('grayscaleValue').value + '%';
+            let huerotateValue = document.getElementById('huerotateValue').value + 'deg';
 
             document.getElementById('blurOutput').innerText = blurValue;
             document.getElementById('brightnessOutput').innerText = brightnessValue;
-            document.getElementById('Image').style.filter = 'blur(' + blurValue + ') brightness(' + brightnessValue + ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ')';
+            document.getElementById('Image').style.filter = 'blur(' + blurValue + ') brightness(' + brightnessValue + ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ') hue-rotate(' + huerotateValue + ')';
         }
 
     </script>
@@ -49,10 +50,13 @@
                 Фильтр grayscale:
                 <input type="range" min="0" max="100" value="0" onchange="Filter()" id="grayscaleValue">
                 <span id="contrastOutput"></span><br>
+                Фильтр hue-rotate:
+                <input type="range" min="0" max="360" value="0" onchange="Filter()" id="huerotateValue">
+                <span id="contrastOutput"></span><br>
             </div>
             <div><img src="pr.jpeg" id='Image' class="img"></div>
         </main>
-        
+        hue-rotate()
         <footer>
             <hr>
             &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
