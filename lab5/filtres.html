@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ярославцев Богдан Всеволодович. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-32x32.png">
+    </head>
+    <script>
+        function blurChange() {
+            let value = document.getElementById('blurValue').value + 'px';
+            document.getElementById('blurOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'blur(' + value + ')';
+        }
+    </script>
+    <style>
+        .img {
+            width: 80%;
+            margin-left: 180px;
+            border: 1px solid black;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+    </style>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная 5
+        </header>
+        <main>
+            <div>
+                Фильтр blur:
+                <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
+                <span id="blurOutput"></span>
+            </div>
+            <div><img  src="pr.jpeg" id='blurImage' class="img"></div>
+        </main>
+
+        <footer>
+            <hr>
+            &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
+        </footer>
+    </body>
+</html>
