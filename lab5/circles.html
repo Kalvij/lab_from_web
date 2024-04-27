@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ярославцев Богдан Всеволодович. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-32x32.png">
+    </head>
+    <body>
+        <script>
+            function hideCircle(circle) {
+                    circle.style.transition = "all 0.7s";
+                    circle.style.opacity = "0";
+                    circle.style.width = "0";
+                    circle.style.height = "0";
+            }
+            function showAllCircles() {
+                    let circles = document.querySelectorAll('.circles');
+                    circles.forEach(circle => {
+                        circle.style.transition = "all 0.7s";
+                        circle.style.opacity = "1";
+                        circle.style.width = "50px";
+                        circle.style.height = "50px";
+                });
+            }
+        </script>
+        <style>
+            .container {
+                    position: absolute;
+                }
+            .circles {
+                position: absolute;
+                display: none;
+                padding: 10px;
+                border-radius: 50%;
+                background-color: #fff;
+                border: 2px solid black;
+                transition: opacity 0.7s ease;
+                cursor: pointer;
+            }
+            .circles:nth-child(1) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color:RGB(255, 99, 71);
+            }
+        
+            .circles:nth-child(2) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(70, 130, 180);
+            }
+        
+            .circles:nth-child(3) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(50, 205, 50);
+            }
+        
+            .circles:nth-child(4) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(255, 105, 180);
+            }
+        
+            .circles:nth-child(5) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(30, 144, 255);
+            }
+            .circles:nth-child(6) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(255, 165, 0);
+            }
+            .circles:nth-child(7) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(138, 43, 226);
+            }
+            .circles:nth-child(8) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(0, 206, 209);
+            }
+            .circles:nth-child(9) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color:RGB(255, 215, 0);
+            }
+            .circles:nth-child(10) {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: RGB(46, 139, 87) ;
+            }
+            .text {
+                display: none;
+                width: auto;
+                height: auto;
+                max-width: 200px;
+                padding: 35px;
+                text-align: center;
+                line-height: 1.5;
+                font-size: 30px;
+            }
+            .back {
+                position: absolute;
+            }
+            .text-button {
+                margin-top: 800px;
+        
+            }
+        
+        </style>
+        <header>
+            НГТУ ФБ, Лабораторная 5
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="circles text" style="top: 90px; left: 90px;" onclick="hideCircle(this)">1</div>
+                <div class="circles text" style="top: 350px; left: 850px" onclick="hideCircle(this)">2</div>
+                <div class="circles text" style="top: 390px; left: 350px;" onclick="hideCircle(this)">3</div>
+                <div class="circles text" style="top: 300px; left: 1700px;" onclick="hideCircle(this)">4</div>
+                <div class="circles text" style="top: 650px; left: 430px;" onclick="hideCircle(this)">5</div>
+                <div class="circles text" style="top: 600px; left: 940px;" onclick="hideCircle(this)">6</div>
+                <div class="circles text" style="top: 200px; left: 1300px;" onclick="hideCircle(this)">7</div>
+                <div class="circles text" style="top: 70px; left: 1040px;" onclick="hideCircle(this)">8</div>
+                <div class="circles text" style="top: 150px; left: 600px;" onclick="hideCircle(this)">9</div>
+                <div class="circles text" style="top: 500px; left: 1400px;" onclick="hideCircle(this)">10</div>
+            <div class="back">
+                <div class="text-button">
+                    <input style="background: black; color: lightgreen;padding: 20px; margin-left: 550%;margin-top: 10px;border-radius: 10px;text-align: center;font-family: 100px;" type="button" value="Вернуть кружочки" onclick="showAllCircles()">
+                </div>
+            </div>
+        </main>
+
+
+        <footer>
+            <hr>
+            &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
+        </footer>
+    </body>
+</html>
