@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ярославцев Богдан Всеволодович. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-32x32.png">
+        <style>
+            .color {
+                border: 2px solid black;
+                width: 300px;
+                text-align: center;
+                margin-left: 10px;
+                margin-bottom: 30px;
+                padding: 100px;
+                text-align: center;
+                margin-top: 20px;
+                background-color: green;
+                cursor: pointer;
+
+            }
+        </style>
+        <script>
+            function changeColor(div) {
+                if(div.style.backgroundColor == 'green') {
+                    div.style.background = 'red';
+                    div.style.borderRadius = '20%';
+                    document.getElementById('color-name').innerHTML = 'Красный';
+                }
+                else if(div.style.backgroundColor == 'red') {
+                    div.style.background = 'orange';
+                    div.style.borderRadius = '30%';
+                    document.getElementById('color-name').innerHTML = 'Оранжевый'
+                }
+                else if(div.style.background == 'orange') {
+                    div.style.background = 'white'
+                    div.style.borderRadius = '40%';
+                    document.getElementById('color-name').innerHTML = 'Белый'
+                }
+                else if(div.style.background == 'white') {
+                    div.style.background = 'grey'
+                    div.style.borderRadius = '50%';
+                    document.getElementById('color-name').innerHTML = 'Cерый'
+                
+                }
+                else if(div.style.background == 'grey') {
+                    div.style.background = 'yellow'
+                    div.style.borderRadius = '60%';
+                    document.getElementById('color-name').innerHTML = 'Желтый'
+                
+                }
+                else {
+                    div.style.background = 'green'
+                    div.style.borderRadius = '0%';
+                    document.getElementById('color-name').innerHTML = 'Зеленый'
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ ФБ, Лабораторная 6
+        </header>
+
+        <main>
+            <div class="color" ondblclick="changeColor(this)">
+                Цвет: <span id="color-name">Зеленый</span><br>
+                Сделайте двойной щелчок, чтобы сменить.
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
+        </footer>
+    </body>
+</html>
