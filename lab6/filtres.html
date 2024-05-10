@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ярославцев Богдан Всеволодович. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-32x32.png">
+        <style>
+            .but {
+            cursor: pointer;
+            border: 3px solid rebeccapurple;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            background: rgb(0, 14, 5);
+            color: lightgreen;
+            box-shadow: 1px 1px 10px rgb(111, 0, 255);
+            margin-bottom: 15px;
+            margin-top: 10px;
+            margin-left: 10px;
+            }
+            .maint {
+                border: 2px solid black;
+                margin-left: 33%;
+                width: 30%;
+                border-radius: 15px;
+                padding: 35px;
+                background: url(1.jpg);
+            }
+            .inter {
+                margin-bottom: 5px;
+                margin-left: 10px;
+            }
+        </style>
+        <script>
+            function filter() {
+                let color = document.getElementById('wear-color').value
+                let type = document.getElementById('wear-type').value
+                let wear = document.getElementById('wear');
+                wear.src = ''
+        
+                if (color == 'Красный' && type == 'Футболка') {
+                    wear.src = '2.jpg'
+                    div.style.border = '20px solid';
+                }
+                else if (color == 'Красный' && type == 'Поло') {
+                    wear.src = '3.jpg'
+                }
+                else if (color == 'Красный' && type == 'Майка') {
+                    wear.src = '4.webp'
+                }
+            
+                else if (color == 'Черный' && type == 'Футболка') {
+                    wear.src = '5.jpg'
+                }
+                else if (color == 'Черный' && type == 'Поло') {
+                    wear.src = '6.jpg'
+                }
+                else if (color == 'Черный' && type == 'Майка') {
+                    wear.src = '7.jpg'
+                }
+                else if (color == 'Белый' && type == 'Футболка') {
+                    wear.src = '8.jpg'
+                }
+                else if (color == 'Белый' && type == 'Поло') {
+                    wear.src = '9.jpg'
+                }
+                else if (color == 'Белый' && type == 'Майка') {
+                    wear.src = '10.jpg'
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ ФБ, Лабораторная 6
+        </header>
+
+        <main>
+            <div class="maint">
+                <div class="inter">
+                    Цвет одежды:
+                    <select id="wear-color">
+                        <option>Красный</option>
+                        <option>Белый</option>
+                        <option>Черный</option>
+                    </select><br>
+                </div>
+                <div class="inter">    
+                    Тип одежды:
+                    <select id="wear-type">
+                        <option>Футболка</option>
+                        <option>Поло</option>
+                        <option>Майка</option>
+                    </select><br>
+                </div>
+    
+                <button class="but" onclick="filter()">ОК</button><br>
+    
+                <img id="wear">
+            </div>
+        </main>
+
+
+        <footer>
+            <hr>
+            &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
+        </footer>
+    </body>
+</html>
