@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ярославцев Богдан Всеволодович. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-32x32.png">
+    </head>
+    <style>
+        #output {
+            border: 3px solid white;
+            border-radius: 15px;
+            padding: 23px;
+            background: url(12.avif);
+            width: 550px;
+            height: auto;
+            margin-left: 31%;
+        }
+        .h1 {
+            font-size: 30px;
+            color: rgb(12, 10, 8);
+            text-shadow: 5px 5px 10px 10px white;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+    
+        }
+        .product {
+            border-collapse: collapse;
+            width: 95%;
+            margin-bottom: 30px;
+        }
+        .product th, .product td {
+            border: 2px solid white;
+            padding: 8px;
+            text-align: center;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;  
+            box-shadow:  1px 2px 3px black;
+        }
+        .button1 {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .button2 {
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;  
+        }
+        .button2:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            box-shadow:  1px 2px 3px black;
+        }
+        .tovar {
+            margin-bottom: 5px;
+            border: 2px solid black;
+            padding: 3px;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 10px;
+            margin-top: 5px;
+            width: 170px;
+        }
+        .result {
+            color: black;
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white; 
+            margin-top: 10px;
+        }
+        
+    </style>
+    <script>
+        function SummTotal() {
+            let balance = parseFloat(document.getElementById('balance').value) || 0;
+            let Apples = parseInt(document.getElementById('Apples').value) || 0;
+            let Banan = parseInt(document.getElementById('Banan').value) || 0;
+            let Orang = parseInt(document.getElementById('Orang').value) || 0;
+            let Mango = parseInt(document.getElementById('Mango').value) || 0;
+            let Limon = parseInt(document.getElementById('Limon').value) || 0;
+            let Water = parseInt(document.getElementById('Water').value) || 0;
+            let Milk = parseInt(document.getElementById('Milk').value) || 0;
+    
+            if (Apples < 0 || Banan < 0 || Orang < 0 || Mango < 0 || Limon < 0 || Water < 0 || Milk< 0) {
+                alert('Количество товара не может быть отрицательным! Введите корректное значение');
+                return;
+            }
+    
+            let total = (Apples * 90 + Banan * 80 + Orang * 50 + Mango * 420 + Limon * 115 + Water * 120 + Milk * 67);
+            if (total === 0) {
+                alert('Необходимо выбрать хотя бы один товар!');
+                return;
+            }
+    
+            let remainingBalance = balance - total;
+            if (remainingBalance < 0) {
+                alert('У вас недостаточно средств на балансе!');
+                return;
+            }
+    
+            document.getElementById('result').innerHTML = 'Общая сумма: ' + total + ' руб.<br>Остаток на балансе: ' + remainingBalance + ' руб.';
+        }
+    
+        function CleanHolders() {
+            document.getElementById('balance').value = '';
+            document.getElementById('Apples').value = '';
+            document.getElementById('Banan').value = '';
+            document.getElementById('Orang').value = '';
+            document.getElementById('Mango').value = '';
+            document.getElementById('Limon').value = '';
+            document.getElementById('Water').innerHTML = '';
+            document.getElementById('Milk').innerHTML = '';
+            document.getElementById('result').innerHTML = '';
+        }
+    </script>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header> 
+    
+        <main> 
+            <div id="output">
+                <div class="h1">
+                    Корзина товаров
+                </div>
+                  <b style="color: black;text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;">Мой баланс:</b>
+                <input type="number" id="balance" placeholder="Введите баланс" style="margin-bottom: 10px;border: 2px solid black;padding: 3px;box-shadow: 2px 2px 2px black;border-radius: 10px;margin-top: 10px;width: 200px;">
+                <table class="product">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Название</th>
+                            <th>Цена</th>
+                            <th>Количество</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                            <td>1</td>
+                            <td>Яблоки</td>
+                            <td>90 руб/шт</td>
+                            <td><input type="number" class="tovar" min="0" id="Apples" placeholder="0"></td>
+                        </tr>
+                        <tr >
+                            <td>2</td>
+                            <td>Бананы</td>
+                            <td>80 руб/шт</td>
+                            <td><input type="number" class="tovar" min="0" id="Banan" placeholder="0"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Апельсины</td>
+                            <td>50 руб/шт</td>
+                            <td><input type="number" class="tovar" min="0" id="Orang" placeholder="0"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Манго</td>
+                            <td>420 руб/шт</td>
+                            <td><input type="number" class="tovar" min="0" id="Mango" placeholder="0"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Лимон</td>
+                            <td>115 руб/шт</td>
+                            <td><input type="number" class="tovar"  min="0" id="Limon" placeholder="0" ></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Вода</td>
+                            <td>120 руб/бут</td>
+                            <td><input type="number" class="tovar" min="0" id="Water" placeholder="0" ></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Молоко</td>
+                            <td>67 руб/бут</td>
+                            <td><input type="number"  class="tovar" min="0" id="Milk" placeholder="0" ></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="button1">
+                    <button class="button2" onclick="SummTotal()">ОК</button>
+                    <button class="button2" onclick="CleanHolders()">Очистить значения</button>
+                </div>
+                <div id="result" class="result" style="text-align: center; margin-top: 10px;"></div>
+            </div>
+        </main>
+        <footer>
+            <hr>
+            &copy;Ярославцев Богдан, ФБИ-24, 2 курс, 2024   
+        </footer>
+    </body>
+</html>
