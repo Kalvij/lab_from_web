@@ -35,6 +35,21 @@
                 main.appendChild(newBlock);
             }  
         }
+        function add20_50(){
+            let main = document.querySelector('main');
+            for (let i = 20; i <=50; i+=2.5) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '80px';
+                newBlock.style.textAlign = 'center'
+                newBlock.style.border = '0px solid';
+                newBlock.style.background = 'url(2.png)'
+                newBlock.style.color = 'orange';
+                newBlock.style.textShadow = '1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white'
+                newBlock.style.fontFamily = 'Times'
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+            }
+        }
     </script>
     <style>
         div {
@@ -67,7 +82,8 @@
     <main>
         <input type="number" placeholder="Введите количество блоков" min="0" class="count">
         <button class="btn" onclick="addNewBlocks()">Добавить блоки</button>
-        <button class="btn" onclick="addNewBlock()">Добавить блок</button> 
+        <button class="btn" onclick="addNewBlock()">Добавить блок</button>
+        <button class="btn" onclick="add20_50()">20 => 50</button> 
     </main>
 
     <footer>
