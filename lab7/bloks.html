@@ -16,6 +16,25 @@
 
             document.querySelector('main').appendChild(newBlock);
         }
+        function addNewBlocks(){
+            let main = document.querySelector('main');
+            let width = 135;
+            let count = document.querySelector('.count');
+            for (let i = 0; i<count.value; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.background = 'url(1.png)';
+                newBlock.style.height = '40px';
+                newBlock.style.width = `${width += 20}px`;
+                newBlock.style.border = '2px solid black'
+                newBlock.style.borderRadius = '10px';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.paddingTop = '15px';
+                newBlock.style.color = 'black'
+                newBlock.style.textShadow = '1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white'
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2* i**2}`;
+                main.appendChild(newBlock);
+            }  
+        }
     </script>
     <style>
         div {
@@ -26,7 +45,7 @@
             width: 400px;
             padding: 20px;
         }
-        .btn {
+        .btn, .count {
             width: 310px;
             border: 5px solid;
             border-radius: 40px;
@@ -36,6 +55,7 @@
             background: rgba(0, 0, 0, 0.801);
             margin-top: 15px;
             height: 60px;
+            text-align: center;
         }
     </style>
 </head>
@@ -45,6 +65,8 @@
     </header> 
 
     <main>
+        <input type="number" placeholder="Введите количество блоков" min="0" class="count">
+        <button class="btn" onclick="addNewBlocks()">Добавить блоки</button>
         <button class="btn" onclick="addNewBlock()">Добавить блок</button> 
     </main>
 
