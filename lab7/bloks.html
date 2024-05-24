@@ -69,6 +69,23 @@
                 main.appendChild(newBlock);
             }
         }
+        function opacity(){
+            let main = document.querySelector('main');
+            let opacity = 0;
+            for (let i = 0; i<10; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.height = '25px';
+                newBlock.style.width = '90px';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.background = 'rgba(0, 0, 0, 0.9)';
+                newBlock.style.textShadow = '1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white'
+                newBlock.style.color = 'black';
+                newBlock.style.borderRadius = '10px';
+                newBlock.style.opacity = `${opacity += 10}%`;
+                newBlock.innerHTML = `Блок ${i+1}`;
+                main.appendChild(newBlock);
+            }  
+        }
     </script>
     <style>
         div {
@@ -104,6 +121,7 @@
         <button class="btn" onclick="addNewBlock()">Добавить блок</button>
         <button class="btn" onclick="add20_50()">20 => 50</button>
         <button class="btn" style="margin-right: 200px;" onclick="add10_80()"> 10 => -80</button>
+        <button class="btn" onclick="opacity()">Добавить полупрозрачные блоки</button>
     </main>
 
     <footer>
