@@ -50,6 +50,25 @@
                 main.appendChild(newBlock);
             }
         }
+        function add10_80(){
+            let main = document.querySelector('main');
+            for (let i = 10; i >=-80; i-=3){
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '25px';
+                newBlock.style.height = '25px';
+                newBlock.style.marginBottom = '20px'
+                newBlock.style.marginRight = '40px'
+                newBlock.style.border = '2px solid black';
+                newBlock.style.backgroundColor = 'yellow';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.color = 'black';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.display ='inline-block';
+                newBlock.style.paddingTop = '15px';
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+            }
+        }
     </script>
     <style>
         div {
@@ -83,7 +102,8 @@
         <input type="number" placeholder="Введите количество блоков" min="0" class="count">
         <button class="btn" onclick="addNewBlocks()">Добавить блоки</button>
         <button class="btn" onclick="addNewBlock()">Добавить блок</button>
-        <button class="btn" onclick="add20_50()">20 => 50</button> 
+        <button class="btn" onclick="add20_50()">20 => 50</button>
+        <button class="btn" style="margin-right: 200px;" onclick="add10_80()"> 10 => -80</button>
     </main>
 
     <footer>
