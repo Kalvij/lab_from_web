@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ярославцев Богдан Всеволодович. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const currentDate = new Date(json.Date).toLocaleDateString('ru-RU');
+                    const currentRate = json.Valute.EUR.Value.toFixed(2);
+                    const previousRate = json.Valute.EUR.Previous.toFixed(2);
+                    const difference = (currentRate - previousRate).toFixed(2);
+                    const rateinf = (difference > 0) ? 'Курс поднялся' : ((difference < 0) ? 'Курс опустился' : '');
+
+                    document.getElementById('currentDate').innerText = `Дата запроса: ${currentDate}`;
+                    document.getElementById('currentRate').innerText = `${currentRate} р.`;
+                    document.getElementById('previousRate').innerText = `${previousRate} р.`;
+                    document.getElementById('difference').innerText = `${difference} р.`;
+                    document.getElementById('rateInfo').innerText = rateinf;
+
+                    document.getElementById('Info').style.display = 'block';
+                })
+
+        }
+    </script>
+    <style>
+        .button {
+            width: 310px;
+            border: 5px solid;
+            border-radius: 40px;
+            display: inline-block;
+            vertical-align: top;
+            color: lightgreen;
+            background: rgba(0, 0, 0, 0.801);
+            margin-top: 15px;
+            height: 60px;
+            text-align: center;
+            
+        }
+        .info {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 20px;
+            margin-left: 1px;
+            margin-top: 15px;
+        }
+        th {
+            background-color: orange;
+            color: white;
+            height: 30px;
+            text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+            
+            }
+        table {
+            border-collapse: collapse;
+            width: 40%;
+            border: 2px solid white;
+            text-align: center;
+            
+        }
+        td {
+            border: 2px solid rgba(0, 0, 0, 0.13);
+            text-align: center;
+            padding: 15px;
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+            color: black;
+            background: rgba(248, 248, 255, 0.932);
+            
+        }
+        p {
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+            color: black;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header> 
+
+    <main> 
+        <button class="button" onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="Info" class="info" style="display: none;">
+            <table>
+                <tr>
+                    <th> </th>
+                    <th>Значение</th>
+                </tr>
+                <tr>
+                    <td>Текущий курс евро</td>
+                    <td id="currentRate"></td>
+                </tr>
+                <tr>
+                    <td>Курс за прошлую дату</td>
+                    <td id="previousRate"></td>
+                </tr>
+                <tr>
+                    <td>Разница</td>
+                    <td id="difference"></td>
+                </tr>
+                <tr>
+                    <td>Прогноз</td>
+                    <td id="rateInfo"></td>
+                </tr>
+            </table>
+            <p id="currentDate"></p>
+            <p>Ссылка на ресурс: <a class="href" href="https://www.cbr-xml-daily.ru/">www.cbr-xml-daily.ru</a></p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Ярославцев Богдан, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
