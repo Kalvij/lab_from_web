@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ярославцев Богдан Всеволодович. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function weather(){
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+            .then( function(response){
+                return response.json();
+            })
+            .then( function(json){
+                console.log(json);
+                document.querySelector('.w_8am').innerHTML = 'Температура воздуха в 8:00 равна : ' + json.hourly.temperature_2m[8] + '°';
+                document.querySelector('.w_12pm').innerHTML = 'Температура воздуха в 12:00 равна : ' + json.hourly.temperature_2m[12] + '°';
+                document.querySelector('.w_20pm').innerHTML = 'Температура воздуха в 20:00 равна : ' + json.hourly.temperature_2m[20] + '°';
+            })
+        }
+    </script>
+    <style>
+        div {
+            margin-left: -67%;
+            margin-top: 20px;
+        }
+        p{
+            margin: 10px auto;
+            border: 2px solid black;
+            background: white;
+            box-shadow:  1px 2px 3px black;
+            padding: 10px;
+            width: 600px;
+            height: 20px;
+            text-align: center;
+            border-radius: 10px;
+            text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+            color: beige;
+        }
+        .btn {
+            width: 310px;
+            border: 5px solid;
+            border-radius: 40px;
+            display: inline-block;
+            vertical-align: top;
+            color: lightgreen;
+            background: rgba(0, 0, 0, 0.801);
+            margin-top: 15px;
+            height: 60px;
+            text-align: center;
+        }
+        h1 {
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header> 
+
+    <main> 
+        <h1>Прогноз погоды в Новосибирске</h1>
+        <button class="btn" onclick="weather()">Узнать погоду</button>
+        <div>
+            <p class="w_8am"></p>
+            <p class="w_12pm"></p>
+            <p class="w_20pm"></p>
+        </div>   
+    </main>
+
+    <footer>
+        &copy; Ярославцев Богдан, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
