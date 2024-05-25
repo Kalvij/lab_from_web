@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ярославцев Богдан Всеволодович. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function showExchange(){
+            const exchange = [
+                92.3464, 92.5674, 92.3496, 92.7978, 92.6465, 92.5464,92.5603, 
+                93.1564, 93.8543, 93.5631
+            ];
+            let detailElement = document.getElementById('detail');
+            detailElement.innerHTML = '';
+            let table = document.getElementById('dollar-table');
+            table.innerHTML= '';
+            for (let i =0; i< exchange.length; i++){
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i =0; i<exchange.length; i++) {
+                sum+=exchange[i];
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+            detailElement.innerHTML = `Средний курс доллара за 10 дней: <b>${average}</b>`;
+
+        }
+    </script>
+    <style>
+        .btn {
+            width: 310px;
+            border: 5px solid;
+            border-radius: 40px;
+            display: inline-block;
+            vertical-align: top;
+            color: lightgreen;
+            background: rgba(0, 0, 0, 0.801);
+            margin-top: 15px;
+            height: 60px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .tbl {
+            background: orange;
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+            color: black;
+            text-align: center;
+            margin-left: 15px;
+            width: 150px;
+            margin-bottom: 15px;
+        }
+        .aver {
+            color: black;
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+            font-family: Times;
+            font-size: 25px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header> 
+
+    <main> 
+        <button class="btn" onclick="showExchange()" class="but">Курс доллара</button>
+        <table class="tbl" border="1" id="dollar-table"></table>
+        <div class="aver" id="detail"></div>
+    </main>
+
+    <footer>
+        &copy; Ярославцев Богдан, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
