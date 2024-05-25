@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ярославцев Богдан Всеволодович. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function Exchange(){
+            const data = [
+            '11.05.2024', '12.05.2024', '13.05.2024', '14.05.2024', '15.05.2024', '16.05.2024', '17.05.2024', '18.05.2024', '19.05.2024', '20.05.2024'
+            ];
+            const price = [
+            3124, 3378, 3398, 3371, 3365, 3338, 3186, 3185, 3165, 3073
+            ];
+            let table = document.getElementById('prom');
+            for (let i=0; i<price.length; i++){
+                let tr = document.createElement('tr');
+
+                let td1 = document.createElement('td');
+                td1.innerHTML = price[i];
+
+                let td2 = document.createElement('td');
+                td2.innerHTML = data[i];
+
+                let td3 = document.createElement('td');
+                
+                if (i > 0){
+                    let difference = price[i] - price[i-1];
+                    difference = difference.toFixed(4)
+                    td3.innerHTML = difference;
+                }
+                else{
+                    td3.innerHTML = '0';
+                    td3.style.textAlign = 'center';
+                }
+
+                tr.appendChild(td2);
+                tr.appendChild(td1);
+                tr.appendChild(td3);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i =0; i<price.length; i++){
+                sum+=price[i];
+            }
+
+            let avg = sum/price.length
+            avg= avg.toFixed(4);
+            const min = Math.min.apply(Math, price)
+            const max = Math.max.apply(Math, price)
+
+            document.querySelector('.avg').innerHTML = 'Среднее значение акций: ' + avg;
+            document.querySelector('.min').innerHTML = 'Минимальная стоимость акции: ' + min;
+            document.querySelector('.max').innerHTML = 'Максимальная стоимость акции: ' + max;
+        }
+    </script>
+    <style>
+        .btn {
+            width: 310px;
+            border: 5px solid;
+            border-radius: 40px;
+            display: inline-block;
+            vertical-align: top;
+            color: lightgreen;
+            background: rgba(0, 0, 0, 0.801);
+            margin-top: 15px;
+            height: 60px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        table {
+            background: orange;
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+            color: black;
+            text-align: center;
+            margin-left: 15px;
+            width: 400px;
+            margin-bottom: 15px;
+        }
+        p {
+            color: black;
+            text-shadow: 1px 1px 0px white, -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white;
+            font-family: Times;
+            font-size: 25px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>НГТУ, ФБ, Лабораторная работа 7</header>
+
+    <main>
+        <button onclick="Exchange()" class="btn">Котировки акций компании АНК «Башнефть»</button>
+        <table border="1" id="prom"></table>
+        <p class="avg"></p>
+        <p class="min"></p>
+        <p class="max"></p>
+    </main>
+
+    <footer>
+        &copy; Ярославцев Богдан, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
