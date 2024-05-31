@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео - Брокерская компания РЕГИОН</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="fav2.png" type="image/x-icon">
+    <link rel="icon" href="fav2.png">
+    <script>
+        function addComment() {
+            const commentText = document.getElementById('commentText').value;
+            if (commentText) {
+                const commentSection = document.getElementById('commentsContainer');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `<p><strong>Вы:</strong> ${commentText}</p>`;
+                commentSection.appendChild(newComment);
+                document.getElementById('commentText').value = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header style="background: url(bridge.jpeg)">
+        <div class="container">
+            <div class="logo">
+                <a href="rgz.html"><img src="logo1.png" alt="Логотип РЕГИОН"></a>
+            </div>
+            
+        </div>
+    </header>
+
+    <section class="video">
+        <div class="container">
+            <h2>Видео о компании РЕГИОН</h2>
+            <div class="video-wrapper">
+                <iframe width="700" height="450" src="https://www.youtube.com/embed/zgI1trvtU8s" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="comments-section">
+                <h3>Комментарии</h3>
+                <div id="commentsContainer">
+                    <div class="comment">
+                        <p><strong>Алексей:</strong> Отличное видео, много полезной информации!</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>Мария:</strong> Спасибо за разъяснение, стало понятнее.</p>
+                    </div>
+                </div>
+                <form id="commentForm">
+                    <textarea id="commentText" placeholder="Ваш комментарий..."></textarea>
+                    <button type="button" onclick="addComment()">Добавить комментарий</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="board">
+        <p>Широкий выбор финансовых инструментов обеспечивается благодаря взаимодействию с российскими торговыми площадками и зарубежными контрагентами.</p>
+        <p>Клиентам доступны операции с акциями, облигациями, фьючерсами, опционами, паями и валютными парами. Инвесторы имеют возможность принять участие в 
+        первичных размещениях выпусков облигаций широкого списка эмитентов. Компания предоставляет гибкие сервисы по управлению ликвидностью. </p>
+        <p>Клиенты имеют возможность получить электронный доступ к финансовым инструментам, проводя все операции удаленно с помощью современных технологий.</p>
+    </div>
+    <footer>
+        <div class="container">
+            <p style="color: rgba(255, 255, 255, 0.397);">&copy; 2024 Брокерская компания РЕГИОН. Все права защищены.</p>
+        </div>
+    </footer>
+    <nav class="bottom-menu">
+        <ul>
+            <li><a href="rgz.html"><img src="info.png" alt="О компании">О компании</a></li>
+            <li><a href="news.html"><img src="news.png" alt="Новости">Новости</a></li>
+            <li><a href="currency.html"><img src="currency.png" alt="Курс валют">Курс валют</a></li>
+            <li><a href="contacts.html"><img src="contacts.png" alt="Контакты">Контакты</a></li>
+            <li><a href="videos.html"><img src="videos.png" alt="Видео">Видео</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

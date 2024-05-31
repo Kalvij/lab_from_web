@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru" class="bodyt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="fav2.png" type="image/x-icon">
+    <link rel="icon" href="fav2.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+                .then(response => response.json())
+                .then(data => {
+                    const usdRate = data.Valute.USD.Value;
+                    const eurRate = data.Valute.EUR.Value;
+                    const gbpRate = data.Valute.GBP.Value;
+                    const cnyRate = data.Valute.CNY.Value;
+                    const jpyRate = data.Valute.JPY.Value;
+                    const cadRate = data.Valute.CAD.Value;
+                    const audRate = data.Valute.AUD.Value;
+                    const chfRate = data.Valute.CHF.Value;
+                    const sekRate = data.Valute.SEK.Value;
+                    const nokRate = data.Valute.NOK.Value;
+                    const dkkRate = data.Valute.DKK.Value;
+                    const brlRate = data.Valute.BRL.Value;
+                    const zarRate = data.Valute.ZAR.Value;
+                    const inrRate = data.Valute.INR.Value;
+                    const tryRate = data.Valute.TRY.Value;
+
+                    document.getElementById('exchangeRate').innerText = `1 USD = ${usdRate.toFixed(4)} RUB`;
+                    localStorage.setItem('exchangeRate', usdRate);
+                    drawChart(data);
+
+                    const tickerContent = 
+                        `<span>USD/RUB: ${usdRate.toFixed(4)}</span>
+                        <span>EUR/RUB: ${eurRate.toFixed(4)}</span>
+                        <span>GBP/RUB: ${gbpRate.toFixed(4)}</span>
+                        <span>CNY/RUB: ${cnyRate.toFixed(4)}</span>
+                        <span>JPY/RUB: ${(jpyRate * 100).toFixed(4)}</span>
+                        <span>CAD/RUB: ${cadRate.toFixed(4)}</span>
+                        <span>AUD/RUB: ${audRate.toFixed(4)}</span>
+                        <span>CHF/RUB: ${chfRate.toFixed(4)}</span>
+                        <span>SEK/RUB: ${sekRate.toFixed(4)}</span>
+                        <span>NOK/RUB: ${nokRate.toFixed(4)}</span>
+                        <span>DKK/RUB: ${dkkRate.toFixed(4)}</span>
+                        <span>BRL/RUB: ${brlRate.toFixed(4)}</span>
+                        <span>ZAR/RUB: ${zarRate.toFixed(4)}</span>
+                        <span>INR/RUB: ${inrRate.toFixed(4)}</span>
+                        <span>TRY/RUB: ${tryRate.toFixed(4)}</span>`;
+
+                    document.getElementById('ticker-content').innerHTML = tickerContent;
+                });
+
+            document.getElementById('inputAmount').addEventListener('input', convertCurrency);
+            document.getElementById('inputCurrency').addEventListener('change', convertCurrency);
+            document.getElementById('outputCurrency').addEventListener('change', convertCurrency);
+        });
+
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById('inputAmount').value);
+            const rate = parseFloat(localStorage.getItem('exchangeRate'));
+            const inputCurrency = document.getElementById('inputCurrency').value;
+            const outputCurrency = document.getElementById('outputCurrency').value;
+            let result;
+
+            if (inputCurrency === 'USD' && outputCurrency === 'RUB') {
+                result = amount * rate;
+            } else if (inputCurrency === 'RUB' && outputCurrency === 'USD') {
+                result = amount / rate;
+            } else {
+                result = amount;
+            }
+
+            document.getElementById('outputAmount').value = result.toFixed(4);
+        }
+
+        function swapCurrencies() {
+            const inputCurrency = document.getElementById('inputCurrency');
+            const outputCurrency = document.getElementById('outputCurrency');
+            const tempCurrency = inputCurrency.value;
+            inputCurrency.value = outputCurrency.value;
+            outputCurrency.value = tempCurrency;
+            convertCurrency();
+        }
+
+        function drawChart(data) {
+            const labels = [];
+            const values = [];
+            const date = new Date();
+            
+            for (let i = 29; i >= 0; i--) {
+                const day = new Date(date);
+                day.setDate(day.getDate() - i);
+                const label = day.toISOString().split('T')[0];
+                labels.push(label);
+                values.push((data.Valute.USD.Previous + (Math.random() - 0.5) * 0.1).toFixed(4));
+            }
+
+            const ctx = document.getElementById('exchangeRateChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Exchange Rate (USD/RUB)',
+                        data: values,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: false,
+                        lineTension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Exchange Rate'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body >
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="rgz.html"><img src="logo1.png" alt="Логотип РЕГИОН"></a>
+            </div>
+        </div>
+    </header>
+    <div id="ticker" class="ticker">
+        <div id="ticker-content" class="ticker-content"></div>
+    </div>
+    <div class="containertrade">
+        <div class="trade">
+            <h2>Курс валют</h2>
+            <div class="chain">
+                <span>USD/RUB</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="inputAmount" placeholder="Количество" oninput="convertCurrency()">
+                <select id="inputCurrency" onchange="convertCurrency()">
+                    <option value="USD">USD</option>
+                    <option value="RUB">RUB</option>
+                </select>
+                <button id="swapButton" onclick="swapCurrencies()">⇄</button>
+                <input type="text" id="outputAmount" readonly>
+                <select id="outputCurrency" onchange="convertCurrency()">
+                    <option value="RUB">RUB</option>
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+            <div class="details">
+                <span id="exchangeRate"></span>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="exchangeRateChart"></canvas>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p style="color: rgba(255, 255, 255, 0.397);">&copy; 2024 Брокерская компания РЕГИОН. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <nav class="bottom-menu">
+        <ul>
+            <li><a href="rgz.html"><img src="info.png" alt="О компании">О компании</a></li>
+            <li><a href="news.html"><img src="news.png" alt="Новости">Новости</a></li>
+            <li><a href="currency.html"><img src="currency.png" alt="Курс валют">Курс валют</a></li>
+            <li><a href="contacts.html"><img src="contacts.png" alt="Контакты">Контакты</a></li>
+            <li><a href="videos.html"><img src="videos.png" alt="Видео">Видео</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
+

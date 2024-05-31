@@ -1,0 +1,526 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+.container {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: -10px;
+    height: auto;
+    
+}
+.container h2 {
+    margin-top: 60px;
+    font-size: 40px;
+    margin-left: 25px;
+    font-family: 'Times New Roman';
+    color: #333333de;
+    
+}
+.container p {
+    color: #333333de;
+    margin-left: 25px;
+    margin-bottom: 50px;
+    margin-top: -10px;
+
+}
+
+.header, header {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+}
+
+header .logo img {
+    width: 150px;
+    bottom: 100px;  
+    
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #007BFF;
+}
+
+.hero {
+    
+    background-size: cover;
+    background-position: center center;
+    height: 60vh; /* Устанавливаем высоту секции hero */
+    margin-top: -70px; /* Отрицательный margin, чтобы hero пересекался с header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    z-index: 0;
+}
+
+.hero-content {
+    color: white;
+    font-size: 22px;
+    text-align: left;
+    margin-left: -19%;
+    max-width: 55%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: -12%;
+    
+}
+.award h3 {
+    color: orange;
+    font-size: 25px;
+    margin-bottom: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.award p {
+    font-size: 15px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #333333cb;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+    
+}
+.photo {
+    margin-top: -60px;
+    top: 0;
+    margin-right: -290px;
+    width: 40%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: -450px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.btn {
+    background: #007BFF;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.awards {
+    background: #fff;
+    padding: 2em 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.awards .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.award {
+    width: 30%;
+    margin-top: 45px;
+}
+
+.services {
+    background: transparent; /* Заменяем серый фон на прозрачный */
+    padding: 3em 0; /* Увеличиваем отступ сверху и снизу */
+    border-top: 1px solid rgba(128, 128, 128, 0.253); /* Тонкая серая линия сверху */
+    
+    
+}
+.services .service-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service {
+    width: 24%;
+    height: 400px;
+    background: #fff;
+    padding: 40px;
+    margin-bottom: 20px; /* Добавляем отступ между карточками */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Добавляем анимацию при наведении */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+
+
+}
+
+.service h3 {
+    margin-top: 0;
+    text-align: left;
+    color: rgba(19, 16, 16, 0.932);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.news {
+    background: #fff;
+    padding: 2em 0;
+    
+}
+
+.news .news-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.news-item {
+    width: 30%;
+    text-align: center;
+    text-align: left;
+    margin-left: 15px;
+    
+}
+
+.news-item p {
+    margin: 0.5em 0;
+    margin-top: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.842);
+    margin-bottom: 25px;
+    
+}
+.news-item a {
+    margin: 0.5em 0;
+    margin-top: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.842);
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 106, 0, 0.301); /* Коричневатый цвет с прозрачностью 50% */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 0;
+    transition: transform 0.3s ease, background 0.3s ease; /* Плавный переход для эффекта увеличения и изменения прозрачности */
+}
+
+.bottom-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-menu ul li a {
+    display: flex; /* Используем flex для выравнивания иконки и текста */
+    align-items: center; /* Выравнивание элементов по центру */
+    padding: 5px;
+    text-decoration: none;
+    color: white; /* Цвет текста */
+}
+.bottom-menu ul li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+.bottom-menu:hover {
+    transform: scale(1.3); /* Увеличение панели при наведении */
+    background: rgba(255, 179, 37, 0.7);
+    padding: 15px;
+}
+.service-description {
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    margin-right: 15px;
+    width: 289px;
+    height: 278px;
+    border-radius: 10px;
+    margin-top: 90px; /* Увеличим отступ сверху для разделения от заголовка */
+    background: rgba(255, 255, 255, 0.86); /* Устанавливаем цвет текста: белый с прозрачностью 70% */
+    margin-left: -25px;
+    
+}
+
+.service-description ul {
+    list-style: none;
+    padding: 0; 
+}
+
+.service-description ul li:before {
+    content: "⎯"; /* Используем палочку в качестве маркера */
+    margin-right: 8px; /* Увеличиваем отступ между маркером и текстом */
+    color: orange; /* Оранжевый цвет для маркера */
+    font-size: 1.2em; /* Увеличиваем размер палочки */
+    font-weight: bold; /* Делаем палочку жирной */
+    text-align: left;
+}
+li {
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    vertical-align: text-bottom; /* Вертикальное выравнивание текста */
+}
+ul {
+    margin-left: -15px;
+}
+.video {
+    background: #f4f4f4;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.video-wrapper {
+    margin: 0 auto;
+    max-width: 900px;
+    
+}
+.board {
+    border: 0px solid;
+    margin-top: 53px;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 10px;
+    background: rgba(204, 202, 202, 0.158);
+    padding: 30px;
+    height: 180px;
+    margin-bottom: 30px;
+
+}
+.board p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    color: #333333d0;
+    margin-top: -2px;
+    margin-bottom: 20px;
+}
+.comments-section {
+    flex: 0 0 30%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 24%;
+    max-height: 500px;
+    overflow-y: auto;
+    width: 620px;
+    margin-top: 15px;
+    
+}
+
+.comments-section h3 {
+    margin-top: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.comment:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.comment {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    background: rgba(240, 240, 240, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+.comment p {
+    margin-top: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#commentsContainer {
+    margin-bottom: 1em;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#commentText {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#commentForm button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#commentForm button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.containertrade {
+    background-color: #1e1e1e60;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 900px;
+    margin-top: 2%;
+    margin-left: 25%;
+    margin-bottom: 60px;
+    
+    
+}
+.chain span {
+    color: rgba(255, 255, 255, 0.89);
+}
+.trade h2 {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.89);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.chain, .converter, .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
+.converter {
+    flex-direction: column;
+}
+
+.converter input, .converter select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+.converter button {
+    background-color: #3e3e3e;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.details span {
+    display: block;
+    margin: 5px 0;
+}
+.chart-container {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+}
+#exchangeRate {
+    color: rgba(255, 255, 255, 0.89); 
+}
+#ticker {
+    color: #fff;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+#ticker-content span {
+    margin-right: 70px; /* Пробел между валютами */
+}
+
+#ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 60s linear infinite; /* Уменьшил скорость анимации */
+    white-space: nowrap;
+}
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.bodyt {
+    background-image: url('fon.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.bodyt::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.466); /* цвет черный с 50% прозрачностью */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* чтобы фон был под всем контентом */
+}
+.chart-container {
+    width: 1500px;
+    max-width: 1000px;
+    max-height: 600px;
+    height: 400px;
+    margin-left: 30px;
+}
