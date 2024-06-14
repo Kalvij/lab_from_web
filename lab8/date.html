@@ -24,8 +24,7 @@
             padding: 15px;
             margin: 0 auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-
+            margin-bottom: 15px;
         }
 
         .crv{
@@ -33,7 +32,7 @@
         }
     </style>
 </head>
-<body onload="showDate()">
+<body onload="showDate(), showDateTime()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8
     </header> 
@@ -46,6 +45,23 @@
             <div class="crv" id="current-date4"></div>
             <div class="crv" id="current-date5"></div>
             <div class="crv" id="current-date6"></div>
+        </div>
+        <div id="curr-date">
+            <div id="current-date" style="padding-top: 10px;">
+                Текущая дата и время:
+                <span id="date-time"></span><br>
+                Текущий год: <span id="year"></span><br>
+                Текущий месяц: <span id="month"></span><br>
+                Текущая дата: <span id="date"></span><br>
+                День недели: <span id="day-of-week"></span><br>
+            </div>
+        </div><br>
+        <div>
+            <div id="date-time"></div>
+            <div id="year"></div>
+            <div id="month"></div>
+            <div id="date"></div>
+            <div id="day-of-week"></div>
         </div>
     </main>
 
